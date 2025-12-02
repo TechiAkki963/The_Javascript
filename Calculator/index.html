@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <p>
+      <button
+        onclick="
+        calculation += '1'
+      console.log(`Calculation : ${calculation}`);"
+      >
+        1
+      </button>
+      <button
+        onclick="
+        calculation += '2'
+      console.log(`Calculation : ${calculation}`);"
+      >
+        2
+      </button>
+      <button
+        onclick="
+        calculation += '3'
+      console.log(`Calculation : ${calculation}`);"
+      >
+        3
+      </button>
+    </p>
+
+    <p>
+      <button
+        onclick="
+            calculation += '4'
+        console.log(`Calculation : ${calculation}`);"
+      >
+        4
+      </button>
+      <button
+        onclick="
+            calculation += '5'
+        console.log(`Calculation : ${calculation}`);"
+      >
+        5
+      </button>
+      <button
+        onclick="
+            calculation += '6'
+        console.log(`Calculation : ${calculation}`);"
+      >
+        6
+      </button>
+    </p>
+
+    <p>
+      <button
+        onclick="
+                calculation += '7'
+            console.log(`Calculation : ${calculation}`);"
+      >
+        7
+      </button>
+      <button
+        onclick="
+                calculation += '8'
+            console.log(`Calculation : ${calculation}`);"
+      >
+        8
+      </button>
+      <button
+        onclick="
+                calculation += '9'
+            console.log(`Calculation : ${calculation}`);"
+      >
+        9
+      </button>
+    </p>
+    <button
+      onclick="
+        calculation += ' + '
+      console.log(`Calculation : ${calculation}`);"
+    >
+      +
+    </button>
+
+    <button
+      onclick="
+        calculation += ' - '
+      console.log(`Calculation : ${calculation}`);"
+    >
+      -
+    </button>
+
+    <button
+      onclick="
+      eval(calculation);
+      calculation = eval(calculation);
+      console.log(`Calculation : ${calculation}`);"
+    >
+      =
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>
