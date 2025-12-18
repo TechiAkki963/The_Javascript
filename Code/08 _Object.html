@@ -11,51 +11,110 @@
     <script>
       // Object creation
       /*
-      const product = {
-        name: "Socks",
-        price: 1.99,
+                  const product = {
+                    name: "Socks",
+                    price: 1.99,
+                  };
+                  console.log(typeof product);
+                  console.log(product.name);
+                  console.log(product.price);
+
+                  product.name = "cotton socks";
+                  console.log(product.name);
+
+                  product.newProperty = true;
+                  console.log(product.newProperty);
+                  console.log(product);
+
+                  delete product.newProperty;
+                  console.log(product);
+            */
+      /*
+            const product2 = {
+              name: "Tshirt",
+              "delivery-time": "5 Days",
+              rating: {
+                stars: 4.5,
+                count: 234,
+              },
+              fun: function function1() {
+                console.log("Function inside Object");
+              },
+            };
+            console.log(product2);
+            console.log(product2.name);
+            console.log(product2["delivery-time"]);
+            console.log(product2.rating.stars);
+            product2.fun();
+
+            // Built in objects
+
+            console.log(typeof console);
+            console.log(typeof console.log);
+
+            console.log(Math);
+            console.log(Math.random());
+
+            console.log(JSON.stringify(product2));
+
+            const jsonString = JSON.stringify(product2);
+            console.log(JSON.parse(jsonString));
+
+      */
+
+      console.log("hello".length);
+      console.log("hello".toUpperCase());
+
+      // Object Reference
+
+      const object1 = {
+        message: "hello",
       };
-      console.log(typeof product);
-      console.log(product.name);
-      console.log(product.price);
 
-      product.name = "cotton socks";
-      console.log(product.name);
+      const object2 = object1;
 
-      product.newProperty = true;
-      console.log(product.newProperty);
-      console.log(product);
+      object1.message = "Good Job!";
 
-      delete product.newProperty;
-      console.log(product);
-*/
+      console.log(object1);
+      console.log(object2);
 
+      // Object cannot be compared
 
-      const product2 = {
-        name: 'Tshirt',
-        'delivery-time':'5 Days',
-      rating:{
-        stars: 4.5,
-        count: 234,
-      },
-      fun: function function1(){
-        console.log('Function inside Object');
-      }
-      }
-      console.log(product2);
-      console.log(product2.name);
-      console.log(product2['delivery-time']);
-      console.log(product2.rating.stars);
-      product2.fun();
+      const object3 = {
+        message: "Good Job!",
+      };
 
+      console.log(object3 === object1);
+      console.log(object2 === object1);
 
-      // Built in objects
+      // Object Destructuring
 
-      console.log(typeof console);
-      console.log(typeof console.log);
+      const object4 = {
+        message: "Good Job!",
+        price: 1000,
+      };
 
-      console.log(Math);
-      console.log(Math.random());
+      // const message = object4.message; // this can also be written as
+
+      const { message, price } = object4;
+      console.log(message);
+      console.log(price);
+
+      const object5 = {
+        // message: message, //message is variable from the above object4 message:'Good Job!'
+        message, // can also be written as
+
+        // Shorthand Method
+        method: function function1() {
+          console.log("method");
+        }, // can also be written as
+
+        method() {
+          console.log("method");
+        },
+      };
+      console.log(message);
+      object5.method();
     </script>
   </body>
 </html>
