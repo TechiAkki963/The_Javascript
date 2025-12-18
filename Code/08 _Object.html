@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <h1>Objects</h1>
+
+    <script>
+      // Object creation
+      /*
+      const product = {
+        name: "Socks",
+        price: 1.99,
+      };
+      console.log(typeof product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = "cotton socks";
+      console.log(product.name);
+
+      product.newProperty = true;
+      console.log(product.newProperty);
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product);
+*/
+
+
+      const product2 = {
+        name: 'Tshirt',
+        'delivery-time':'5 Days',
+      rating:{
+        stars: 4.5,
+        count: 234,
+      },
+      fun: function function1(){
+        console.log('Function inside Object');
+      }
+      }
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['delivery-time']);
+      console.log(product2.rating.stars);
+      product2.fun();
+
+
+      // Built in objects
+
+      console.log(typeof console);
+      console.log(typeof console.log);
+
+      console.log(Math);
+      console.log(Math.random());
+    </script>
+  </body>
+</html>
