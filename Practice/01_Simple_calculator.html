@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <h1>Simple Calculator</h1>
+
+    <script>
+      function calculate(a, b, operations) {
+        let result;
+        if (operations === "add") {
+          result = a + b;
+        } else if (operations === "subtract") {
+          result = a - b;
+        } else if (operations === "multiply") {
+          result = a * b;
+        } else if (operations === "divide") {
+          if (b === 0) {
+            return { success: false, error: "Division by zero" };
+          }
+          result = a / b;
+        } else {
+          return { success: false, error: "Invalid operation" };
+        }
+        return { success: true, result: result };
+      }
+
+      console.log(calculate(2, 3, "add"));
+      console.log(calculate(2, 3, "subtract"));
+      console.log(calculate(2, 3, "multiply"));
+      console.log(calculate(2, 6, "divide"));
+      console.log(calculate(4, 7, "modules"));
+    </script>
+  </body>
+</html>

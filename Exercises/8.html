@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <h1>Object Exercises</h1>
+    <script>
+      const product = {
+        "product-name": "Basketball",
+        price: 2095,
+      };
+
+      console.log(product);
+      console.log(product["product-name"]);
+      console.log(product.price);
+
+      product.price += 500;
+      console.log(product.price);
+
+      product["delivery-time"] = "3 days";
+      console.log(product);
+
+      const product1 = {
+        "product-name": "Apple",
+        productPrice: 5,
+      };
+
+      const product2 = {
+        "product-name": "Mango",
+        productPrice: 5,
+      };
+
+      function comparePrice(a, b) {
+        if (a.productPrice < b.productPrice) {
+          return {
+            name: a["product-name"],
+            price: a.productPrice,
+          };
+        } else if (a.productPrice === b.productPrice)
+          return {
+            success: false,
+            message: "Equal Price",
+          };
+        else {
+          return {
+            name: b["product-name"],
+            price: b.productPrice,
+          };
+        }
+      }
+      console.log(comparePrice(product1, product2));
+
+      function isSameProduct(a, b) {
+        if (
+          a["product-name"] === b["product-name"] &&
+          a.productPrice === b.productPrice
+        ) {
+          return {
+            success: true,
+            message: "Both are same products!",
+          };
+        } else {
+          return {
+            success: false,
+            message: "Products are different",
+          };
+        }
+      }
+
+      //   repeat string
+
+      function repeatString(text, times) {
+        let result;
+
+        result = text.repeat(times);
+
+        return result;
+      }
+      console.log(repeatString("text", 2));
+    </script>
+  </body>
+</html>

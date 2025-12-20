@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Analyzer</title>
+  </head>
+  <body>
+    <h1>Number Analyzer</h1>
+
+    <script>
+      function numberAnalyser(number) {
+        let type = "";
+        let sign = "";
+
+        if (number > 0) {
+          sign = "+";
+          console.log("Number is " + sign);
+        } else if (number === 0) {
+          sign = "zero";
+          console.log("Number is " + sign);
+        } else {
+          sign = " - ";
+          console.log("Number is " + sign);
+        }
+
+        if (number % 2 === 0) {
+          type = "even";
+          console.log("Number is " + type);
+        } else {
+          type = "odd";
+          console.log("Number is " + type);
+        }
+
+        return { type: type, sign: sign };
+      }
+
+      numberAnalyser(-5);
+
+      numberAnalyser(10);
+
+      numberAnalyser(0);
+    </script>
+  </body>
+</html>

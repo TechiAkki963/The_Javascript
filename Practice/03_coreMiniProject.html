@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM mini</title>
+  </head>
+  <body>
+    <h1>ATM</h1>
+
+    <script>
+      const account = {
+        balance: 0,
+        holderName: "Akshay",
+        frozen: false,
+      };
+
+      function deposit(amount) {
+        if (account.frozen) {
+          return { success: false, error: "Account is frozen" };
+        }
+
+        if (amount <= 0) {
+          return { success: false, error: "Invalid amount" };
+        }
+
+        account.balance += amount;
+        return { success: true, balance: account.balance };
+      }
+
+      function withdraw(amount) {
+        if (account.frozen) {
+          return { success: false, error: "Account is frozen" };
+        }
+
+        if (amount <= 0) {
+          return { success: false, error: "Invalid amount" };
+        }
+
+        if (amount > account.balance) {
+          return { success: false, error: "Insufficient funds" };
+        }
+
+        account.balance -= amount;
+        return { success: true, balance: account.balance };
+      }
+
+      function getBalance() {
+        return { success: true, balance: account.balance };
+      }
+    </script>
+  </body>
+</html>
