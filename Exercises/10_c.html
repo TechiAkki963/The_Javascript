@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 c</title>
+    <style>
+      .gaming-btn {
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 10px 10px;
+        border-radius: 5px;
+      }
+      .is-toggle {
+        background-color: rgb(225, 225, 225);
+        color: rgb(40, 40, 40);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="js-gaming-btn gaming-btn" onclick="btnfn('gaming')">
+      Gaming
+    </button>
+
+    <button class="js-music-btn gaming-btn" onclick="btnfn('music')">
+      Music
+    </button>
+
+    <button class="js-tech-btn gaming-btn" onclick="btnfn('tech')">Tech</button>
+
+    <script>
+      function btnfn(type) {
+        const gaming = document.querySelector(".js-gaming-btn");
+        const music = document.querySelector(".js-music-btn");
+        const tech = document.querySelector(".js-tech-btn");
+
+        // 1. Remove active state from all
+        gaming.classList.remove("is-toggle");
+        music.classList.remove("is-toggle");
+        tech.classList.remove("is-toggle");
+
+        // 2. Add active state to clicked button
+        if (type === "gaming") {
+          gaming.classList.add("is-toggle");
+        } else if (type === "music") {
+          music.classList.add("is-toggle");
+        } else if (type === "tech") {
+          tech.classList.add("is-toggle");
+        }
+      }
+    </script>
+  </body>
+</html>
