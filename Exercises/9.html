@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoM Exercises</title>
+  </head>
+  <body>
+    <button class="js-button-9a">9a</button>
+    <button
+      class="js-button-9b"
+      onclick="
+    clicker()
+    "
+    >
+      9b
+    </button>
+
+    <button onclick="headsTails('Heads')">Heads</button>
+    <button onclick="headsTails('Tails')">Tails</button>
+
+    <p class="display-choice"></p>
+
+    <input
+      type="text"
+      placeholder="Enter your Name"
+      class="name-input"
+      onkeydown="
+      if (event.key === 'Enter'){
+        displayName()
+      }
+      
+      
+      "
+    />|
+    <button onclick="displayName()">Submit</button>
+    <p class="js-display-name"></p>
+
+    <script>
+      function displayName() {
+        const nameInputElement = document.querySelector(".name-input").value;
+        let name = document.querySelector(".js-display-name");
+
+        name.innerHTML = `${nameInputElement}`;
+      }
+
+      function headsTails(choice) {
+        const displayChoice = document.querySelector(".display-choice");
+        displayChoice.innerText = `You chose: ${choice}`;
+      }
+
+      console.log(document.querySelector(".js-button-9a"));
+
+      document.querySelector("js-button-9b");
+
+      function clicker() {
+        const button_9b_Element = document.querySelector(".js-button-9b");
+        if (button_9b_Element.innerText === "9b") {
+          button_9b_Element.innerHTML = "9b Done!";
+        } else {
+          button_9b_Element.innerHTML = "9b";
+        }
+      }
+    </script>
+  </body>
+</html>
