@@ -9,53 +9,53 @@
     <h1>Arrays</h1>
     <script>
       /*
-  const myArray = [10, 20, 30];
+        const myArray = [10, 20, 30];
 
-      console.log(myArray);
-      //Updating an array
-      myArray[0] = 99;
-      console.log(myArray);
-      const product = [10, "clothing", true, { name: "socks" }, [10, 20, 30]];
-      console.log(product);
+            console.log(myArray);
+            //Updating an array
+            myArray[0] = 99;
+            console.log(myArray);
+            const product = [10, "clothing", true, { name: "socks" }, [10, 20, 30]];
+            console.log(product);
 
-      console.log(typeof [10, 20, 30]); // object
+            console.log(typeof [10, 20, 30]); // object
 
-      console.log(Array.isArray([10, 20])); //true
+            console.log(Array.isArray([10, 20])); //true
 
-      // Basic array methods
+            // Basic array methods
 
-      console.log(myArray.length); //3
+            console.log(myArray.length); //3
 
-      myArray.push(100);
-      console.log(myArray);
+            myArray.push(100);
+            console.log(myArray);
 
-      myArray.splice(0, 1);
-      console.log(myArray);
+            myArray.splice(0, 1);
+            console.log(myArray);
 
-      // While Loop
+            // While Loop
 
-      let i = 1;
+            let i = 1;
 
-      while (i <= 5) {
-        console.log(i);
-        i++;
-      }
-*/
+            while (i <= 5) {
+              console.log(i);
+              i++;
+            }
+      */
       /*
-      // For Loop
+            // For Loop
 
-      for (let i = 1; i <= 5; i++) {
-        console.log(i);
-      }
+            for (let i = 1; i <= 5; i++) {
+              console.log(i);
+            }
 
-      // While loop condition
-      let randomNumber = 0;
+            // While loop condition
+            let randomNumber = 0;
 
-      while (randomNumber < 0.5) {
-        randomNumber = Math.random();
-      }
-      console.log(randomNumber);
-*/
+            while (randomNumber < 0.5) {
+              randomNumber = Math.random();
+            }
+            console.log(randomNumber);
+      */
 
       // Looping through an ARRAY
 
@@ -65,24 +65,82 @@
       //   const task = todoLList[i];
       //   console.log(task);
       // }
+      /**
+            // Accumulator Pattern
 
-      // Accumulator Pattern
+            const nums = [1, 1, 3];
+            let total = 0;
 
-      const nums = [1, 1, 3];
-      let total = 0;
+            for (let i = 0; i < nums.length; i++) {
+              let num = nums[i];
+              total = total + num;
+            }
+            console.log(total); //5
 
-      for (let i = 0; i < nums.length; i++) {
-        let num = nums[i];
-        total = total + num;
+            const numDouble = [];
+            for (let i = 0; i < nums.length; i++) {
+              const num = nums[i];
+              numDouble.push(2 * num);
+            }
+            console.log(numDouble); //(3) [2, 2, 6]
+
+            */
+
+      // Arrays are references
+
+      const array1 = [1, 2, 3];
+      const array2 = array1;
+      array2.push(4);
+      console.log(array1);
+      console.log(array2);
+      // The above example create a same reference
+      // to avoid we create a copy using slice()
+
+      const array3 = array1.slice();
+      array3.push(6);
+      console.log(array1);
+      console.log(array2);
+      console.log(array3);
+
+      // Array destrcucting
+
+      // const arr = [1, 2, 3];
+      //  The above can be destrcutured as
+      const [firstValue, secondValue, thirdValue] = [1, 2, 3];
+
+      //  LOOPS (break and continue)
+      // break; exits a loop early
+      // continue; skips one iteration
+
+      for (let i = 1; i <= 10; i++) {
+        if (i % 3 === 0) {
+          continue;
+        }
+        console.log(i);
+        if (i === 8) {
+          break;
+        }
+        // console.log(i);
       }
-      console.log(total); //5
 
-      const numDouble = [];
-      for (let i = 0; i < nums.length; i++) {
-        const num = nums[i];
-        numDouble.push(2 * num);
+      // Loops with Functions
+
+      function doubly(nums) {
+        const double = [];
+        for (let i = 0; i < nums.length; i++) {
+          const num = nums[i];
+
+          if (num === 0) {
+            return double; // here return act as break;
+          }
+
+          double.push(num * 2);
+        }
+        return double;
       }
-      console.log(numDouble); //(3) [2, 2, 6]
+      console.log(doubly([1, 1, 3]));
+      console.log(doubly([2, 3, 4]));
+      console.log(doubly([2, 5, 0, 8, 6]));
     </script>
   </body>
 </html>
