@@ -1,23 +1,24 @@
-const todoList = [];
-displayTodo();
-function displayTodo() {
-  let todoHTML = " ";
+const todoList = ["make dinner", "wash dishes"];
+const addElement = document.querySelector(".js-add-button");
 
-  for (let i = 0; i < todoList.length; i++) {
-    const todo = todoList[i];
-    const html = `<p>${todo}</p>`;
+addElement.addEventListener("click", () => {
+  const todoElement = document.querySelector(".js-input");
+  const event = todoElement.value;
 
-    todoHTML += html;
+  // push to array
+  todoList.push(event);
 
-    document.querySelector(".js-display-todo").innerHTML = todoHTML;
-  }
-}
+  // clear input
+  todoElement.value = "";
 
-function addItem() {
-  const todoInputElement = document.querySelector(".js-input-todo");
-  const todo = todoInputElement.value;
-  todoList.push(todo);
-  console.log(todoList);
-  displayTodo();
-  todoInputElement.innerHTML = "";
+  renderTodo();
+});
+
+function renderTodo() {
+  const container = document.querySelector(".js-render");
+  container.innerHTML = "";
+
+  todoList.forEach((todo, index) => {
+    container.innerHTML += `<p>${index + 1}. ${todo}</p>`;
+  });
 }

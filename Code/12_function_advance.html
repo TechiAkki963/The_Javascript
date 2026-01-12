@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Advance</title>
+  </head>
+  <body>
+    <h1>Function Advance</h1>
+    <script>
+      /*
+  // Functions are also value
+      // So  they can be also stored in a variable
+
+      const function1 = function () {
+        console.log("Hello from Function1");
+      };
+      function1();
+
+      // As function is a value, we can also pass it in an object
+
+      const Obj = {
+        num: 2,
+        func: function () {
+          console.log("Object Function");
+        },
+      };
+      Obj.func();
+
+      // as Function is a value we can also pass a function inside a function parameter
+
+      function run(param) {
+        param();
+      }
+      run(function () {
+        console.log("Hello from run()");
+      });
+      */
+
+      /*
+      // Set timeout
+
+      setTimeout(function () {
+        console.log("timeout");
+      }, 5000);
+
+      console.log("after settimeout");
+
+      setInterval(function () {
+        console.log("Interval");
+      }, 3000);
+
+      console.log("after setInterval");
+
+      */
+
+      ["make dinner", "wash dishes", "watch youtube"].forEach(function (
+        value,
+        index
+      ) {
+        console.log(value);
+        console.log(index);
+      });
+    </script>
+  </body>
+</html>

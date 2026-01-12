@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote AutoGen</title>
+  </head>
+  <body>
+    <h1>Quotes Generator</h1>
+    <button class="js-btn" onclick="quoteGenerator()">Toggle Quotes</button>
+    <h1 class="js-quote"></h1>
+
+    <script>
+      const quotes = [
+        "Learn JS",
+        "Build daily",
+        "Practice logic",
+        "Think like a dev",
+      ];
+
+      let isDisplay = false;
+      let intervalId;
+      let currentIndex = 0; // This acts as our pointer
+
+      const quoteGen = document.querySelector(".js-quote");
+      const btn = document.querySelector(".js-btn");
+
+      function quoteGenerator() {
+        if (!isDisplay) {
+          // START LOGIC
+          isDisplay = true;
+          btn.innerText = "Stop";
+
+          intervalId = setInterval(function () {
+            // 1. Show the quote at the current position
+            quoteGen.innerHTML = quotes[currentIndex];
+
+            // 2. Increment the index for the next second
+            currentIndex++;
+
+            // 3. Logic to 'loop' back to the start of the array
+            if (currentIndex >= quotes.length) {
+              currentIndex = 0;
+            }
+          }, 1000);
+        } else {
+          // STOP LOGIC
+          clearInterval(intervalId);
+          isDisplay = false;
+          btn.innerText = "Quote";
+          quoteGen.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>

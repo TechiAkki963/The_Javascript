@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body style="transition: background-color 0.5s ease">
+      <h1 id="color-code">Current Color: rgb(255, 255, 255)</h1>
+      <button id="toggle-btn" onclick="toggleColors()">
+        Start Auto Colors
+      </button>
+
+      <script>
+        let isChanging = false;
+        let intervalId;
+
+        const colorText = document.querySelector("#color-code");
+        const btn = document.querySelector("#toggle-btn");
+
+        function toggleColors() {
+          if (!isChanging) {
+            // START LOGIC
+            intervalId = setInterval(function () {
+              // Generate random values for R, G, and B
+              const r = Math.floor(Math.random() * 256);
+              const g = Math.floor(Math.random() * 256);
+              const b = Math.floor(Math.random() * 256);
+
+              // Construct the color string
+              const newColor = `rgb(${r}, ${g}, ${b})`;
+
+              // Apply to the DOM
+              document.body.style.backgroundColor = newColor;
+              colorText.innerText = `Current Color: ${newColor}`;
+            }, 1000);
+
+            btn.innerText = "Stop Auto Colors";
+            isChanging = true;
+          } else {
+            // STOP LOGIC
+            clearInterval(intervalId);
+            btn.innerText = "Start Auto Colors";
+            isChanging = false;
+          }
+        }
+      </script>
+    </body>
+  </body>
+</html>
